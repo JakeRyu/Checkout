@@ -1,0 +1,8 @@
+/.idea/
+[Bb]in/
+[Oo]bj/
+[Pp]ackages/
+
+Thumbs.db
+Desktop.ini
+.DS_Store
