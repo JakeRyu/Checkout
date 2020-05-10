@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using Domain.ValueObjects;
 
 namespace Domain.Entities
 {
@@ -8,7 +9,7 @@ namespace Domain.Entities
         public Guid Id { get; private set; }
         public int MerchantId { get; private set; }
         public string CardHolderName { get; private set; }
-        public string CardNumber { get; private set; }
+        public CardNumber CardNumber { get; private set; }
         public string CardExpiryDate { get; private set; }
         public string Cvv { get; private set; }
         public decimal Amount { get; private set; }
@@ -18,7 +19,7 @@ namespace Domain.Entities
             Id = Guid.NewGuid();
             MerchantId = merchantId;
             CardHolderName = cardHolderName;
-            CardNumber = cardNumber;
+            CardNumber = new CardNumber(cardNumber);
             CardExpiryDate = cardExpiryDate;
             Cvv = cvv;
             Amount = amount;
