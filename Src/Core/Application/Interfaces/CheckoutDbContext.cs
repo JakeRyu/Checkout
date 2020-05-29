@@ -9,6 +9,6 @@ namespace Application.Interfaces
     {
         DbSet<Payment> Payments { get; set; }
         
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+        Task<int> CommitAsync(CancellationToken cancellationToken);
     }
 }
