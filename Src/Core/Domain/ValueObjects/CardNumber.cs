@@ -5,9 +5,11 @@ using System.Text;
 
 namespace Domain.ValueObjects
 {
+#pragma warning disable 660,661
     public class CardNumber : ValueObject
+#pragma warning restore 660,661
     {
-        public string OriginalValue { get; }
+        public string OriginalValue { get; private set; }
         
         public string MaskedValue
         {
@@ -37,10 +39,10 @@ namespace Domain.ValueObjects
                 return formatted;
             }
         }
-
-        public CardNumber(string value)
+        
+        public CardNumber(string originalValue)
         {
-            OriginalValue = value;
+            OriginalValue = originalValue;
         }
 
         public override string ToString()
