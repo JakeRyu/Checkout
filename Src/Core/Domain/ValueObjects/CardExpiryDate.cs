@@ -4,10 +4,11 @@ using Domain.Exceptions;
 
 namespace Domain.ValueObjects
 {
+#pragma warning disable 660,661
     public class CardExpiryDate : ValueObject
+#pragma warning restore 660,661
     {
         public DateTime Value { get; private set; }
-        
 
         /// <summary>
         /// Produce a card expiry date based on month and year
