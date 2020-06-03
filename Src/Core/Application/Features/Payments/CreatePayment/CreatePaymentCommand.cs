@@ -1,4 +1,3 @@
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Interfaces;
@@ -6,7 +5,7 @@ using Domain.Entities;
 using FluentValidation;
 using MediatR;
 
-namespace Application.Features.Payments
+namespace Application.Features.Payments.CreatePayment
 {
     public class CreatePaymentCommand : IRequest
     {

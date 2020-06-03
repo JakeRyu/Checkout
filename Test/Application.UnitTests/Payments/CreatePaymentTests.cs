@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Features.Payments;
+using Application.Features.Payments.CreatePayment;
 using Application.UnitTests.Common;
 using FluentAssertions;
 using FluentValidation;
