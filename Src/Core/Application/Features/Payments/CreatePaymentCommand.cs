@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Application.Interfaces;
 using Domain.Entities;
+using FluentValidation;
 using MediatR;
 
 namespace Application.Features.Payments
@@ -27,6 +28,9 @@ namespace Application.Features.Payments
             
             public async Task<Unit> Handle(CreatePaymentCommand request, CancellationToken cancellationToken)
             {
+                var validator = new CreatePaymentCommandValidator();
+                await validator.ValidateAndThrowAsync(request, cancellationToken: cancellationToken);
+                
                 var payment = new Payment(request.MerchantId, request.CardHolderName, request.CardNumber,
                     request.CardExpiryDate, request.Cvv, request.Amount);
 
