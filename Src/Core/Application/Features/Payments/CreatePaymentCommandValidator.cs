@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using Application.Features.Payments.CreatePayment;
 using FluentValidation;
 
 namespace Application.Features.Payments
