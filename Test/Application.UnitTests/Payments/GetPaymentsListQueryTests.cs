@@ -36,7 +36,7 @@ namespace Application.UnitTests.Payments
             await context.Payments.AddRangeAsync(payments);
             await context.CommitAsync(CancellationToken.None);
             
-            var query = new GetPaymentsListQuery()
+            var query = new GetPaymentsListQuery
             {
                 MerchantId = 1,
                 CardNumber = "1111-2222-3333-4444"

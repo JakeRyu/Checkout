@@ -3,7 +3,7 @@ using Application.Common.Mappings;
 using AutoMapper;
 using Domain.Entities;
 
-namespace Application.Features.Payments.GetPaymentsList
+namespace Application.Features.Payments.GetPaymentDetailQuery
 {
     public class PaymentDetailDto : DtoBase<Payment>
     {
