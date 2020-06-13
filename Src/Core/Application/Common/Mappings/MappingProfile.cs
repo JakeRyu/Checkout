@@ -14,16 +14,22 @@ namespace Application.Common.Mappings
 
         private void ApplyMappingsFromAssembly(Assembly assembly)
         {
+            // var types = assembly.GetExportedTypes()
+            //     .Where(t => 
+            //         t.GetInterfaces().Any(i => i == typeof(IMappable)) &&
+            //         t.IsAbstract == false)
+            //     .ToList();
+            
             var types = assembly.GetExportedTypes()
-                .Where(t => t.GetInterfaces().Any(i => 
-                    i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>)))
+                .Where(t => 
+                    t.BaseType != null && t.BaseType.Name.Contains("DtoBase"))
                 .ToList();
 
             foreach (var type in types)
             {
                 var instance = Activator.CreateInstance(type);
                 var methodInfo = type.GetMethod("Mapping");
-                methodInfo?.Invoke(instance, new object[] { this });
+                methodInfo?.Invoke(instance, new object[] {this});
             }
         }
     }
