@@ -1,4 +1,4 @@
-using Application.Features.Payments;
+using Application.Features.Payments.CreatePayment;
 using FluentValidation.TestHelper;
 using Xunit;
 

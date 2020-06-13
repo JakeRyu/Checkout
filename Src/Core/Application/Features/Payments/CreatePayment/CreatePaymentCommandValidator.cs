@@ -1,8 +1,7 @@
 using System.Text.RegularExpressions;
-using Application.Features.Payments.CreatePayment;
 using FluentValidation;
 
-namespace Application.Features.Payments
+namespace Application.Features.Payments.CreatePayment
 {
     public class CreatePaymentCommandValidator : AbstractValidator<CreatePaymentCommand>
     {
