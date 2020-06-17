@@ -14,12 +14,6 @@ namespace Application.Common.Mappings
 
         private void ApplyMappingsFromAssembly(Assembly assembly)
         {
-            // var types = assembly.GetExportedTypes()
-            //     .Where(t => 
-            //         t.GetInterfaces().Any(i => i == typeof(IMappable)) &&
-            //         t.IsAbstract == false)
-            //     .ToList();
-            
             var types = assembly.GetExportedTypes()
                 .Where(t => 
                     t.BaseType != null && t.BaseType.Name.Contains("DtoBase"))
