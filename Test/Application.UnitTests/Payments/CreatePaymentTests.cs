@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Features.Payments;
+using Application.Features.Payments.CreatePayment;
 using Application.UnitTests.Common;
 using FluentAssertions;
 using FluentValidation;
@@ -43,7 +43,7 @@ namespace Application.UnitTests.Payments
             var command = new CreatePaymentCommand();
             var sut = new CreatePaymentCommand.Handler(Context);
 
-            var result = await sut.Invoking(async h => await h.Handle(command, CancellationToken.None))
+            await sut.Invoking(async h => await h.Handle(command, CancellationToken.None))
                 .Should().ThrowAsync<ValidationException>();
         }
     }
